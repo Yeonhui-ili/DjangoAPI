@@ -41,7 +41,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'apiset',
+    'rest_framework.authtoken', 
+    'tokenapi',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # 인증된 사용자만 접근 허용
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
