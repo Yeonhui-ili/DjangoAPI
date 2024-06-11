@@ -4,6 +4,8 @@ from .serializers import serialize_product
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+# app api(여기)에서는 기본 Django를 사용해서 REST API 구현
+
 @csrf_exempt
 def product_list(request):
     if request.method == 'GET':

@@ -4,6 +4,7 @@ from rest_framework.test import APITestCase
 from .models import Product
 import json
 
+# Django의 TestCase 클래스를 사용하여 API 엔드포인트에 대한 자동화된 테스트를 구현
 class ProductTests(APITestCase):
     def test_create_product(self):
         """
@@ -34,6 +35,7 @@ class ProductTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Product.objects.count(), 0)
 
+# 제품 정보 조회 테스트
 class ProductRetrieveTests(APITestCase):
     def setUp(self):
         self.product = Product.objects.create(name="Test Product", price=20)
