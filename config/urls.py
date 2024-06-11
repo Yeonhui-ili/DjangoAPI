@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+# swagger를 Django REST Framework와 함께 사용해서 API 문서를 생성하고, 이를 통해 API를 테스트하기
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
